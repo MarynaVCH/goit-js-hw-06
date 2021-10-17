@@ -2,12 +2,21 @@ const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Con
 
 const itemEl = document.querySelector('#ingredients');
 
-ingredients.forEach(ingredient => {
+const elements = ingredients.map(element => {
   const vegetables = document.createElement('li');
   vegetables.classList.add('item');
-  vegetables.textContent = ingredient;
-
-  itemEl.append(vegetables);
+  vegetables.textContent = `${element}`;
+  return vegetables;
 });
 
-console.log(itemEl);
+itemEl.prepend(...elements);
+
+// ingredients.forEach(ingredient => {
+//   const vegetables = document.createElement('li');
+//   vegetables.classList.add('item');
+//   vegetables.textContent = ingredient;
+
+//   itemEl.append(vegetables);
+// });
+
+// console.log(itemEl);
